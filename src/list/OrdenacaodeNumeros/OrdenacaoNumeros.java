@@ -1,6 +1,5 @@
 package list.OrdenacaodeNumeros;
 
-import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,17 +9,15 @@ public class OrdenacaoNumeros {
     public void adicionarNumero(int numero) {
         numeros.add(numero);
     }
-    public List<Integer> ordenarAscendente() {
+    public void ordenarAscendente() {
         List<Integer> numerosAcendente = new ArrayList<>(numeros);
         Collections.sort(numerosAcendente);
         numeros = numerosAcendente;
-        return numerosAcendente;
     }
-    public List<Integer> ordenarDescendente() {
+    public void ordenarDescendente() {
         List<Integer> numerosDescendente = new ArrayList<>(numeros);
         numerosDescendente.sort(Collections.reverseOrder());
         numeros = numerosDescendente;
-        return numerosDescendente;
     }
     public void exibirNumeros() {
         for (Integer n : numeros) {
