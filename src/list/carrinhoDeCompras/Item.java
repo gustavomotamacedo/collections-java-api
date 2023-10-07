@@ -1,9 +1,9 @@
 package list.carrinhoDeCompras;
 
 public class Item {
-    private String nome;
-    private double preco;
-    private int quantidade;
+    private final String nome;
+    private final double preco;
+    private final int quantidade;
 
     public Item(String nome, double preco, int quantidade) {
         this.nome = nome;
