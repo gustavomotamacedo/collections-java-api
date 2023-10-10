@@ -4,9 +4,9 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Aluno implements Comparable<Aluno>{
-    private String nome;
-    private long matricula;
-    private double nota;
+    private final String nome;
+    private final long matricula;
+    private final double nota;
 
     public Aluno(String nome, long matricula, double nota) {
         this.nome = nome;
