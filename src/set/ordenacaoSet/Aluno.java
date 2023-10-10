@@ -52,23 +52,11 @@ public class Aluno implements Comparable<Aluno>{
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public long getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(long matricula) {
-        this.matricula = matricula;
-    }
-
     public double getNota() {
         return nota;
-    }
-
-    public void setNota(double nota) {
-        this.nota = nota;
     }
 }
