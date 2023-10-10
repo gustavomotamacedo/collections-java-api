@@ -1,6 +1,5 @@
 package set.pesquisaSet;
 
-import java.util.AbstractSet;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,21 +11,15 @@ public class ListaTarefas {
     public void adicionarTarefa(String descricao) {
         listaDeTarefas.add(new Tarefa(descricao));
     }
-    public boolean removerTarefa(String descricao) {
-        for (Tarefa t : listaDeTarefas) {
-            if (t.getDescricao().equalsIgnoreCase(descricao)) {
-                listaDeTarefas.remove(t);
-                return true;
-            }
-        }
-        return false;
+    public void removerTarefa(String descricao) {
+        listaDeTarefas.removeIf(t -> t.getDescricao().equalsIgnoreCase(descricao));
     }
     public void exibirTarefas() {
         System.out.println(listaDeTarefas);
     }
     public int contarTarefas() {
         int index = 0;
-        for (Tarefa t : listaDeTarefas) {
+        for (int i = 0; i < listaDeTarefas.size(); i++) {
             ++index;
         }
         return index;
@@ -45,37 +38,33 @@ public class ListaTarefas {
             }
         }
     }
-    public boolean marcarTarefaConcluida(String descricao) {
+    public void marcarTarefaConcluida(String descricao) {
         for (Tarefa t : listaDeTarefas) {
             if  (t.getDescricao().equalsIgnoreCase(descricao)) {
                 if (t.isConcluida())  {
                     System.out.println("Tarefa já está concluida!");
-                    return false;
                 } else {
                     t.changeConcluida();
                     System.out.println("Tarefa marcada como concluida!");
-                    return true;
                 }
+                return;
             }
         }
         System.out.println("Tarefa não encontrada!");
-        return false;
     }
-    public boolean marcarTarefaPendente(String descricao) {
+    public void marcarTarefaPendente(String descricao) {
         for (Tarefa t : listaDeTarefas) {
             if  (t.getDescricao().equalsIgnoreCase(descricao)) {
                 if (!t.isConcluida())  {
                     System.out.println("Tarefa já está pendente!");
-                    return false;
                 } else {
                     t.changeConcluida();
                     System.out.println("Tarefa marcada como pendente!");
-                    return true;
                 }
+                return;
             }
         }
         System.out.println("Tarefa não encontrada!");
-        return false;
     }
     public void limparListaTarefas() {
         listaDeTarefas.clear();

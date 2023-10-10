@@ -14,5 +14,8 @@ public class Main {
         lt.marcarTarefaConcluida("lavar Louça");
         lt.marcarTarefaPendente("passar pano");
         lt.obterTarefasConcluidas();
+        System.out.println(lt.contarTarefas());
+        lt.limparListaTarefas();
+        lt.exibirTarefas();
     }
 }
